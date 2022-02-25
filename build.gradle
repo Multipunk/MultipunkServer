@@ -16,13 +16,24 @@ configurations {
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" } // LibGDX
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'io.netty:netty-all:4.1.44.Final'
+
+    implementation 'com.badlogicgames.gdx:gdx:1.10.0'
+    implementation 'com.badlogicgames.gdx:gdx-backend-headless:1.10.0'
+    implementation 'com.badlogicgames.gdx:gdx-platform:1.10.0:natives-desktop'
+
+//    implementation 'org.springframework.shell:spring-shell-starter:2.0.1.RELEASE'
 }
 
 tasks.named('test') {
